@@ -1,0 +1,11 @@
+.NET Core
+Entity Framework
+Git
+Angular
+Repository Pattern & Unit Of Work
+Factory, Strategy, Sigleton Patterns..
+Unit Tests
+Client Site Tests (Protractor)
+SignalR
+Ionic 2
+APIs
