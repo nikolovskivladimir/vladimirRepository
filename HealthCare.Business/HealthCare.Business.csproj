@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HealthCare.Data\HealthCare.Data.csproj" />
+    <ProjectReference Include="..\HealthCare.Repository\HealthCare.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

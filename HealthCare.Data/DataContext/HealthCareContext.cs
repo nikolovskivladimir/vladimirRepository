@@ -13,5 +13,8 @@ namespace HealthCare.Data.DataContext
         }
 
         public DbSet<Patient> Patients { get; set; }
+        public DbSet<PatientVisit> PatientVisits { get; set; }
+        public DbSet<PatientVisitStatus> PatientVisitStatuses { get; set; }
+        public DbSet<Visit> Visits { get; set; }
     }
 }

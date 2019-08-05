@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HealthCare.Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HealthCare.Web.Controllers
@@ -14,9 +15,18 @@ namespace HealthCare.Web.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
+        public static IPatientSystem _patientSystem;
+        public SampleDataController(IPatientSystem patientSystem)
+        {
+            _patientSystem = patientSystem;
+            _patientSystem.GetAllPatients();
+        }
+
         [HttpGet("[action]")]
         public IEnumerable<WeatherForecast> WeatherForecasts()
         {
+
+
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

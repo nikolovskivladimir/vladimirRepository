@@ -3,6 +3,7 @@ Entity Framework
 Git
 Angular
 Repository Pattern & Unit Of Work
+Service Locator
 Factory, Strategy, Sigleton Patterns..
 Unit Tests
 Client Site Tests (Protractor)

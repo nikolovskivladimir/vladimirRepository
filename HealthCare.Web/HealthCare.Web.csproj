@@ -25,7 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\HealthCare.Business\HealthCare.Business.csproj" />
     <ProjectReference Include="..\HealthCare.Data\HealthCare.Data.csproj" />
+    <ProjectReference Include="..\HealthCare.Repository\HealthCare.Repository.csproj" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

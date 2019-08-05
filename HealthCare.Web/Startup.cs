@@ -1,5 +1,9 @@
+using HealthCare.Business.Implementations;
+using HealthCare.Business.Interfaces;
 using HealthCare.Data;
 using HealthCare.Data.DataContext;
+using HealthCare.Data.Models;
+using HealthCare.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +29,8 @@ namespace HealthCare.Web
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<HealthCareContext>(item => item.UseSqlServer(Configuration.GetConnectionString("HealthCareDb")));
+
+            InitializeDependencyInjection(services);
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
@@ -69,6 +75,17 @@ namespace HealthCare.Web
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+        }
+
+        private void InitializeDependencyInjection(IServiceCollection services)
+        {
+            services.AddTransient<IPatientSystem, PatientSystem>();
+
+            services.AddScoped<IRepository<Patient>, Repository<Patient>>();
+            services.AddScoped<IRepository<PatientVisit>, Repository<PatientVisit>>();
+            services.AddScoped<IRepository<Visit>, Repository<Visit>>();
+            services.AddScoped<IRepository<PatientVisitStatus>, Repository<PatientVisitStatus>>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
     }
 }
