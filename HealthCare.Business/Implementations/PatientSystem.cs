@@ -26,20 +26,11 @@ namespace HealthCare.Business.Implementations
             return patients.ToList();
         }
 
-        public void AddPatients()
+        public void CreatePatient()
         {
-            var visit1 = new Visit();
-            visit1.Name = "Visit 1";
+            var patient = new Patient("Ime", "Prezime", DateTime.Today, "31231231", "email");
 
-            var visit2 = new Visit();
-            visit2.Name = "Visit 2";
-
-            var visit3 = new Visit();
-            visit3.Name = "Visit 3";
-
-            _unitOfWork.VisitRepository.Insert(visit1);
-            _unitOfWork.VisitRepository.Insert(visit2);
-            _unitOfWork.VisitRepository.Insert(visit3);
+            _unitOfWork.PatientRepository.Insert(patient);
             _unitOfWork.SaveChanges();
         }
     }
