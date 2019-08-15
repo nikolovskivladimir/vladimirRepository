@@ -19,17 +19,19 @@ namespace HealthCare.Web.Controllers
             _patientSystem = patientSystem;
         }
 
-        public JsonResult GetAllPatientsForGrid()
+        [HttpGet("[action]")]
+        public JsonResult GetPatients()
         {
-            return Json(new List<Patient>() {
-                new Patient("Patient1","Patient11", DateTime.Today, "12419024","asfas@mail.com"),
-                new Patient("Patient2","Patient22", DateTime.Today, "12419024","asfas@mail.com"),
-                new Patient("Patient3","Patient33", DateTime.Today, "12419024","asfas@mail.com"),
-                new Patient("Patient4","Patient44", DateTime.Today, "12419024","asfas@mail.com"),
-                new Patient("Patient5","Patient55", DateTime.Today, "12419024","asfas@mail.com"),
-                new Patient("Patient6","Patient66", DateTime.Today, "12419024","asfas@mail.com"),
-                new Patient("Patient7","Patient77", DateTime.Today, "12419024","asfas@mail.com"),
-            });
+            try
+            {
+                var patients = _patientSystem.GetAllPatients();
+                return Json(patients);
+            }
+            catch (Exception e)
+            {
+                throw e.InnerException;
+            }
+
         }
 
     }

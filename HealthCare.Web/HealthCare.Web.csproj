@@ -28,9 +28,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\patients\IPatient.ts" />
+    <None Remove="ClientApp\src\app\patients\Patient.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\HealthCare.Business\HealthCare.Business.csproj" />
     <ProjectReference Include="..\HealthCare.Data\HealthCare.Data.csproj" />
     <ProjectReference Include="..\HealthCare.Repository\HealthCare.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\patients\IPatient.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\patients\Patient.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -20,9 +20,9 @@ namespace HealthCare.Business.Implementations
         }
 
 
-        public List<Visit> GetAllPatients()
+        public List<Patient> GetAllPatients()
         {
-            var patients = _unitOfWork.VisitRepository.GetAll();
+            var patients = _unitOfWork.PatientRepository.GetAll();
             return patients.ToList();
         }
 

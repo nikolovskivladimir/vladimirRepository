@@ -7,7 +7,7 @@ namespace HealthCare.Business.Interfaces
 {
     public interface IPatientSystem
     {
-        List<Visit> GetAllPatients();
+        List<Patient> GetAllPatients();
         void CreatePatient();
     }
 }
