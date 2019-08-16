@@ -1,6 +1,6 @@
 import { Injectable, Inject } from "@angular/core";
 import { HttpHeaders, HttpClient } from "@angular/common/http";
-import { IPatient } from "./IPatient";
+import { IPatient, Patient } from "./IPatient";
 
 @Injectable()
 export class PatientService {

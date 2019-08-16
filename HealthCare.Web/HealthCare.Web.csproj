@@ -28,8 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\patients\addEditPatient.component.ts" />
     <None Remove="ClientApp\src\app\patients\IPatient.ts" />
-    <None Remove="ClientApp\src\app\patients\Patient.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,8 +39,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\patients\addEditPatient.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\patients\IPatient.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\patients\Patient.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

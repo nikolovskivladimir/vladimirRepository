@@ -1,8 +1,10 @@
 <h1>Patients</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
 
 <p *ngIf="!patients"><em>Loading...</em></p>
+<br />
+<div><button type="button" class="btn btn-success" (click)="onClickMe()">Create Patient</button></div>
+<br />
 
 <table class='table' *ngIf="patients">
   <thead>
@@ -11,14 +13,20 @@
       <th>Last Name</th>
       <th>Date of Birth</th>
       <th>Phone Number</th>
+      <th>Email</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let patient of patients">
       <td>{{ patient.firstName }}</td>
       <td>{{ patient.lastName }}</td>
-      <td>{{ patient.dateOfBirth }}</td>
+      <td>{{ patient.dateOfBirth | date }}</td>
       <td>{{ patient.phoneNumber }}</td>
+      <td>{{ patient.email }}</td>
+      <td><button type="button" class="btn btn-info" (click)="editPatient(patient.id)">Edit</button></td>
+      <td><button type="button" class="btn btn-danger" (click)="onClickMe(patient.id)">Delete</button></td>
     </tr>
   </tbody>
 </table>

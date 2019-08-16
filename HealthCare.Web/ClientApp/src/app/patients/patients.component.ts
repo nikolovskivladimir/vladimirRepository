@@ -1,6 +1,8 @@
 import { Component, Inject } from '@angular/core';
-import { IPatient } from './IPatient';
+import { IPatient, Patient } from './IPatient';
 import { PatientService } from './patients.services';
+//import { NgbModal, ModalDismissReasons } from 'bootstrap';
+//import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-patients',
@@ -18,6 +20,22 @@ export class PatientsComponent {
       .subscribe((patients: IPatient[]) => {
         this.patients = patients;
     });
+  }
+
+  editPatient(id:number) {
+    debugger;
+  }
+
+  updatePatient(id: number) {
+    debugger;
+  }
+
+  createPatient() {
+    //this.modalService.open("asdasd", { ariaLabelledBy: 'modal-basic-title' }).result.then((result) => {
+    // // this.closeResult = `Closed with: ${result}`;
+    //}, (reason) => {
+    //  //this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    //});
   }
 }
 
